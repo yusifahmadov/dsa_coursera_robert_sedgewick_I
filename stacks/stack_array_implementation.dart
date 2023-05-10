@@ -3,7 +3,7 @@ class FixedCapacityStackImplementation {
   int N = 0;
 
   FixedCapacityStackImplementation(int capacity) {
-    s = List.filled(5, null);
+    s = List.filled(capacity, null);
   }
 
   bool isEmpty() => N == 0;
