@@ -1,9 +1,9 @@
 class FixedCapacityStackImplementation {
-  List<String>? s;
+  List<String?>? s;
   int N = 0;
 
   FixedCapacityStackImplementation(int capacity) {
-    s = List.filled(5, "");
+    s = List.filled(5, null);
   }
 
   bool isEmpty() => N == 0;
@@ -12,7 +12,10 @@ class FixedCapacityStackImplementation {
     s?[N++] = item;
   }
 
-  String pop() {
-    return s![--N];
+  String? pop() {
+    String? item = s?[--N];
+    s?[N] = null;
+
+    return item;
   }
 }
